@@ -1,14 +1,14 @@
-workspace:
-  base: /go
-  path: src/github.com/vtex/go-io
+kind: pipeline
+type: docker
+name: greeting
 
-pipeline:
-  build:
-    image: golang:1.14
-    commands:
-      - make build
+steps:
+- name: en
+  image: alpine
+  commands:
+  - echo hello world
 
-  test:
-    image: golang:1.14
-    commands:
-      - make test
+- name: fr
+  image: alpine
+  commands:
+  - echo bonjour monde
